@@ -116,3 +116,27 @@ function countdown() {
       }
     }, 1000);
   }
+
+  // Hide button
+function hideButton() {
+    startGame.style.display = "none";
+  }
+  
+  // Show button
+  function showButton() {
+    startGame.style.display = "initial";
+  }
+  
+  // Initialize
+  function init() {
+    timeLeft.textContent = "00:00:00";
+    showButton();
+    globalTimer = 0;
+    currentScore = 0;
+    questionStart = 0;
+    paragraph.style.display = "block";
+    messageDisplay.textContent = "";
+    messageDisplay.classList.remove("correct", "incorrect");
+  }
+  
+  init();
