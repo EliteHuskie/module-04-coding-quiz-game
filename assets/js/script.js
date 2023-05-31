@@ -15,3 +15,16 @@ const indexOfQuestions = Object.keys(qabank).length - 1;
 let globalTimer = 0;
 let currentScore = 0;
 let questionStart = 0;
+
+// Questions for quizQuestion
+function renderQuestion(content) {
+    quizQuestion.innerHTML = content;
+  }
+  
+  // Choices for quizChoices
+  function renderListItems(content) {
+    const li = document.createElement("li");
+    li.textContent = content;
+  
+    quizChoices.appendChild(li);
+  }
