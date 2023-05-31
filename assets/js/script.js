@@ -57,3 +57,37 @@ function enterHighScore() {
     endForm.appendChild(formButton);
     quizGame.appendChild(endForm);
   }
+
+  // Display Set
+function displaySet(x) {
+    // Display Question
+    renderQuestion(qabank[x]?.question || "");
+  
+    // Randomly Sort Choices
+    const randSeq = [];
+    for (let i = 0; i <= 3; i++) {
+      randSeq.push(i);
+    }
+    randSeq.sort(function (a, b) {
+      return 0.5 - Math.random();
+    });
+  
+    // Display Choices
+    randSeq.forEach((index) => {
+      renderListItems(qabank[x]?.choices[index] || "");
+    });
+  }
+  
+  // Next Set of Questions and Choices
+  function nextSet() {
+    quizChoices.innerHTML = "";
+    questionStart++;
+    if (questionStart <= indexOfQuestions) {
+      displaySet(questionStart);
+    } else {
+      currentScore += globalTimer;
+      globalTimer = 0;
+      quizChoices.innerHTML = "";
+      enterHighScore();
+    }
+  }
