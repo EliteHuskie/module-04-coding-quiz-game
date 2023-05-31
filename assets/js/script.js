@@ -28,3 +28,32 @@ function renderQuestion(content) {
   
     quizChoices.appendChild(li);
   }
+
+  // Game Over + Enter High Score using Initials
+function enterHighScore() {
+    quizQuestion.innerHTML = "Final Score: " + currentScore;
+    const endForm = document.createElement("form");
+  
+    const formLabel = document.createElement("label");
+    formLabel.setAttribute("for", "initials");
+  
+    const formInput = document.createElement("input");
+    formInput.setAttribute("type", "text");
+    formInput.setAttribute("id", "initials");
+    formInput.setAttribute("name", "initials");
+    formInput.setAttribute("placeholder", "Enter initials");
+  
+    // Clear default value when input receives focus
+    formInput.addEventListener("focus", function () {
+      formInput.value = "";
+    });
+  
+    const formButton = document.createElement("input");
+    formButton.setAttribute("type", "submit");
+    formButton.setAttribute("value", "Submit");
+  
+    endForm.appendChild(formLabel);
+    endForm.appendChild(formInput);
+    endForm.appendChild(formButton);
+    quizGame.appendChild(endForm);
+  }
