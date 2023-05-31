@@ -155,3 +155,31 @@ function startGameHandler() {
   }
   
   startGame.addEventListener("click", startGameHandler);
+
+  // Quiz Choice Listener
+function quizChoiceHandler(event) {
+    const userChoice = event.target;
+    const selectedAnswer = userChoice.textContent;
+  
+    // If question is correct, display the below:
+    if (selectedAnswer === qabank[questionStart]?.answer) {
+      messageDisplay.textContent = "Correct!";
+      messageDisplay.classList.add("correct");
+      currentScore += 100;
+      globalTimer += 5;
+    } else {
+      // If question is incorrect, display the below:
+      messageDisplay.textContent = "Incorrect!";
+      messageDisplay.classList.add("incorrect");
+      globalTimer -= 15;
+    }
+  
+    // Timeout function
+    setTimeout(function () {
+      messageDisplay.textContent = "";
+      messageDisplay.classList.remove("correct", "incorrect");
+      nextSet();
+    }, 1000);
+  }
+  
+  quizChoices.addEventListener("click", quizChoiceHandler);
