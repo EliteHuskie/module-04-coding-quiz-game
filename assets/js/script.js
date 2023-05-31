@@ -183,3 +183,23 @@ function quizChoiceHandler(event) {
   }
   
   quizChoices.addEventListener("click", quizChoiceHandler);
+
+  // Store Highscores once game is over
+function submitHandler(event) {
+    event.preventDefault();
+  
+    const initials = document.getElementById("initials").value;
+    const finalScores = {
+      names: initials,
+      score: currentScore
+    };
+  
+    const storedScores = JSON.parse(localStorage.getItem("allScores")) || [];
+  
+    storedScores.push(finalScores);
+    localStorage.setItem("allScores", JSON.stringify(storedScores));
+  
+    location.href = "./assets/high-scores.html";
+  }
+  
+  quizGame.addEventListener("submit", submitHandler);
