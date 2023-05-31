@@ -1,0 +1,147 @@
+/* style.css - is what determines the 'style' of the website and pages that are linked */
+
+/* Any elements that use the below variables will have the specified color */
+:root {
+    --borderColor: black;
+    --bodyColor: purple;
+    --buttonColor: white;
+    --hoverColor: green;
+    --correctAnswer: green;
+    --incorrectAnswer: red;
+}
+
+/* Webpage will have background color as specified */
+body{
+    background-color: var(--bodyColor);
+}
+
+/* List elements settings */
+li {
+    background-color: var(--buttonColor);
+    padding: 8px;
+    margin: 4px 4px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    color: var(--borderColor);
+}
+
+/* List element settings when hovering over with cursor */
+li:hover{
+    transform: scale(0.98);
+    background-color: var(--hoverColor);
+}
+
+/* List element settings when in an active state */
+li:active{
+    transform: scale(0.95);
+}
+
+/* Paragraph settings for any elements using <p> */
+p {
+    top: 5px;
+    right: -75px;
+    padding: 8px 45px;
+    position:relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 600px;
+    margin-right: 700px;
+    inline-size: auto;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    color: var(--buttonColor);
+}
+
+/* Settings for any elements using 'Button' class */
+.Button{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    transform: translate(-50%, -50%);
+    padding: 8px 45px;
+    border: 3px solid var(--borderColor);
+    background-color: var(--buttonColor);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+/* Hover over Buttons */
+.Button:hover{
+    background-color: var(--hoverColor);
+}
+
+/* When Buttons are active */
+.Button:active{
+    opacity: 0.80;
+}
+
+/* Elements that use the quizGame class */
+.quizGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    clear: both;
+    width: 100%;
+    color: var(--buttonColor);
+}
+
+/* Element settings when uisng HighScore */
+#HighScore {
+    height: 50px;
+    width: 272px;
+    background-color: var(--bodyColor);
+    float: left;
+}
+
+/* Settings for when initials is used */
+#initials {
+    padding: 0 4px;
+    margin: 0 8px;
+}
+
+/* Settings when startGame is used for webpage */
+#startGame {
+    display: initial;
+    border: 3px solid var(--borderColor);
+    background-color: var(--buttonColor);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 8px 45px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+/* When hovering over using startGame */
+#startGame:hover{
+    background-color: var(--hoverColor);
+}
+
+/* Quiz questions will use the below */
+#quizQuestion{
+    padding: 10px;
+    color: var(--buttonColor);
+}
+
+/* Time Window will use the below settings */
+#TimeWindow {
+    height: 50px;
+    width: 350px;
+    background-color: var(--bodyColor);
+    float: right;
+    margin-right: -75px;
+    text-align: center;
+    padding: 12px 0px;
+    color: var(--buttonColor);
+}
+
+/* Correct answers will use the color 'green' */
+.correct {
+    color: var(--correctAnswer);
+  }
+/* Incorrect answers will use the color 'red' */
+  .incorrect {
+    color: var(--incorrectAnswer);
+  }  
