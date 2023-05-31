@@ -140,3 +140,18 @@ function hideButton() {
   }
   
   init();
+
+  // Game Start
+function startGameHandler() {
+    paragraph.style.display = "none";
+  
+    // Start Settings
+    globalTimer = 120;
+    hideButton();
+    countdown();
+  
+    // This displays the initial question
+    displaySet(questionStart);
+  }
+  
+  startGame.addEventListener("click", startGameHandler);
