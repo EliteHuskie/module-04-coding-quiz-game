@@ -91,3 +91,28 @@ function displaySet(x) {
       enterHighScore();
     }
   }
+  
+  // Start Timer
+function countdown() {
+    timeLeft.textContent = `00:0${Math.floor(globalTimer / 60)}:${Math.floor(
+      (globalTimer % 60) / 10
+    )}${globalTimer % 10}`;
+    const timeInterval = setInterval(function () {
+      globalTimer--;
+      timeLeft.textContent = `00:0${Math.floor(globalTimer / 60)}:${Math.floor(
+        (globalTimer % 60) / 10
+      )}${globalTimer % 10}`;
+  
+      // Game Ends when timer runs out
+      if (globalTimer <= 0) {
+        clearInterval(timeInterval);
+        timeLeft.textContent = "00:00:00";
+        quizChoices.innerHTML = "";
+  
+        // Enter High Score
+        if (questionStart <= indexOfQuestions) {
+          enterHighScore();
+        }
+      }
+    }, 1000);
+  }
